@@ -1,0 +1,12 @@
+fastapi==0.115.12
+itsdangerous==2.2.0
+langchain-core==0.3.59
+langchain-openai==0.3.16
+langchain-community
+langfuse==2.60.4
+pydantic==2.11.4
+azure-identity>=1.16
+azure-keyvault-secrets>=4.8
+uvicorn[standard]
+opencensus-ext-azure==1.1.14
+opencensus-ext-fastapi==0.1.0

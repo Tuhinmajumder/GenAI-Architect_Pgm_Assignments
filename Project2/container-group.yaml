@@ -1,0 +1,64 @@
+apiVersion: '2019-12-01'
+location: centralindia
+name: acianshu-group
+properties:
+  containers:
+  - name: acianshu-frontend
+    properties:
+      environmentVariables:
+      - name: BACKEND_URL
+        value: http://localhost:8000
+      image: codeacranshu.azurecr.io/imganshu-frontend:latest
+      ports:
+      - port: 80
+      resources:
+        requests:
+          cpu: 1.0
+          memoryInGB: 1.0
+  - name: acianshu-backend
+    properties:
+      environmentVariables:
+      - name: BACKEND_URL
+        value: http://localhost:8000
+      - name: VAULT_NAME
+        value: vaultanshu
+      - name: AZURE_CLIENT_SECRET
+        value: 7fx8Q~JTDtN6YsBRqqFvUMr8vyeorQOsh6hWZawn
+      - name: AZURE_CLIENT_ID
+        value: cc8f42c4-5f99-417b-b833-3bc39649cf4a
+      - name: AZURE_TENANT_ID
+        value: 0d2a6053-e113-42e7-9169-f5cbed7a941f
+      - name: AZURE_DEPLOYMENT
+        value: telcogpt2
+      - name: LANGFUSE_HOST
+        value: https://cloud.langfuse.com
+      - name: AZURE_OPENAI_ENDPOINT
+        value: https://swedencentral.api.cognitive.microsoft.com/
+      - name: SESSION_SECRET
+        value: 5H63Z7x4PrRXzuBrzNF1l9gqYxuN/kF0v1w6y67ie0I=
+      - name: RUNNING_IN_AZURE
+        value: 'True'
+      - name: ALLOWED_ORIGINS
+        value: http://codeopt-app..azurecontainer.io,http://localhost
+      image: codeacranshu.azurecr.io/imganshu-backend:latest
+      ports:
+      - port: 8000
+      resources:
+        requests:
+          cpu: 1.0
+          memoryInGB: 2.0
+  imageRegistryCredentials:
+  - password: 8NEap1GSV4s42DmoUAFdwXMp+4DPHW6pnj6gfwulOJ+ACRD/4NXS
+    server: codeacranshu.azurecr.io
+    username: codeacranshu
+  ipAddress:
+    dnsNameLabel: codeopt-app
+    ports:
+    - port: 80
+      protocol: TCP
+    - port: 8000
+      protocol: TCP
+    type: Public
+  osType: Linux
+tags: {}
+type: Microsoft.ContainerInstance/containerGroups
