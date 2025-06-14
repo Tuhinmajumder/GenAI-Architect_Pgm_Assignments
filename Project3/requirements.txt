@@ -1,0 +1,32 @@
+# requirements.txt
+
+# Core dependencies
+streamlit==1.45.0
+python-dotenv==1.0.1
+
+# LangChain and related dependencies
+langchain==0.3.22
+langchain-community==0.3.20
+langchain-openai==0.3.11
+
+# Azure dependencies
+azure-identity==1.17.1
+azure.keyvault==4.2.0
+azure-search-documents==11.4.0
+azure-storage-blob==12.20.0
+
+# Redis for caching
+redis==5.0.8
+
+# Weaviate for vector database
+weaviate-client==4.14.4
+
+# OpenTelemetry for monitoring
+opentelemetry-distro==0.48b0 
+opentelemetry-instrumentation==0.48b0 
+# opentelemetry-instrumentation-streamlit==0.48b0 
+azure-monitor-opentelemetry-exporter==1.0.0b22
+opencensus-ext-azure==1.1.14
+
+# NumPy for numerical operations
+numpy==1.26.4
